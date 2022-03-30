@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Inherit Product Template And Add New Field Barcode Label Also Add Header Button -->
+
+    <record id="product_template_inherit" model="ir.ui.view">
+        <field name="name">Product Template Form</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_only_form_view"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//field[@name='barcode']" position="after">
+                <field name="barcode_label" />
+            </xpath>
+
+            <xpath expr="//header" position="inside">
+                <button string="Print Barcode Labels" type="action" name="product_barcode_customization.report_simple_label2x7"/>
+            </xpath>
+
+        </field>
+   </record>
+
+</odoo>
