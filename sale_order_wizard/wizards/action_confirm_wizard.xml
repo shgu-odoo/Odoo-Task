@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<odoo>
+    <!-- Cancel Or Confirm Sale Order Wizard and Print Report -->
+    
+    <record id="action_confirm_wizard_form" model="ir.ui.view">
+        <field name="name">action.confirm.wizard.form</field>
+        <field name="model">action.confirm.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Confirm Wizard">
+                <h3> Confirm Or Cancel Sale Order </h3>
+                <footer>
+                    <button name="action_confirm_wizard" string="Confirm" type="object" class="btn-primary"/>
+                    <button name="sale_order_report" string="Print Report" type="object" class="btn-primary"/>
+                    <button string="cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_confirm_wizard_view" model="ir.actions.act_window">
+        <field name="name">Confirm Wizard</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">action.confirm.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="action_confirm_wizard_form"/>
+        <field name="target">new</field>
+    </record>
+
+</odoo>
