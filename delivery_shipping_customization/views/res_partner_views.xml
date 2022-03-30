@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Inherit res partner in contact form and add days_to_deliver field -->
+
+    <record id="person_inherited" model="ir.ui.view">
+        <field name="name">person form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            
+            <field name="property_product_pricelist" position="after">
+                <field name="days_to_deliver"/>
+            </field>
+
+        </field>
+   </record>
+
+</odoo>
