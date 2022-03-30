@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+
+        <!-- Email template -->
+
+    <data>
+        <record id="email_template_custom" model="mail.template">
+            <field name="name">Sales Order Custom Mail : Send by email</field>
+            <field name="model_id" ref="sale.model_sale_order"/>
+            <field name="subject">{{ object.company_id.name }} </field>
+            <field name="email_from"> {{ (object.user_id.email_formatted  or user.email_formatted) }}</field>
+            <field name="partner_to">{{ object.partner_id.id }}</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;">
+                    <p style="margin: 0px; padding: 0px; font-size: 13px;">
+                        Hello,
+                        <br/><br/>
+                        new Quotation is ready
+                        <br/>
+                        Dear <t t-out="object.partner_id.name" /> ,
+                        <br /><br />
+                        Your Order Date is <t t-out="object.date_order" /> .
+                        <br /><br />
+                        Here is your Sale Quotation with Reference : <t t-out="object.name" /> .
+                        <br /><br />
+                    </p>
+                </div>
+            </field>
+            <field name="report_name">{{ (object.name or '').replace('/','_') }}</field>               
+      </record>
+    </data>
+    
+  </odoo>    
