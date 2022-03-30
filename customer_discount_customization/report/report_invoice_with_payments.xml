@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <!-- Inherit Invoice Report  and add 2nd Disc.% Field-->
+
+    <data>
+        <template id="action_report_invoice_with_payments_inherit" inherit_id="account.report_invoice_document">
+
+            <xpath expr="//th[@name='th_taxes']" position="before">
+                <th name="th_second_discount" class="text-right">
+                    <span>2nd Disc.%</span>
+                </th>
+            </xpath>
+
+            <xpath expr="//td[@t-if='display_discount']" position="after">
+                <td name="td_second_discount" class="text-right">
+                    <span t-field="line.second_discount"/>
+                </td>
+            </xpath>
+
+        </template>
+    </data>
+    
+</odoo>

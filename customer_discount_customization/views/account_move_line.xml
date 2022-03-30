@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Inherit Sale Order  and add 2nd Disc. % field -->
+
+    <record id="account_move_line_inherit" model="ir.ui.view">
+        <field name="name">Account Move Line Form</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form" />
+        <field name="arch" type="xml">
+
+            <xpath expr="//field[@name='invoice_line_ids']/tree//field[@name='discount']" position="after">
+                <field name="second_discount"/>
+            </xpath>
+            
+        </field>
+    </record>
+
+</odoo>

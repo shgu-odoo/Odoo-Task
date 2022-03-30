@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Inherit Sale Pro Forma Report  and add 2nd Disc.% Field-->
+
+    <data>
+        <template id="action_report_saleorder_pro_forma_inherit" inherit_id="sale.report_saleorder_pro_forma"></template>
+    </data>
+</odoo>

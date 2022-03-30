@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Inherit Sale Report  and add 2nd Disc.% Field-->
+
+    <data>
+        <template id="action_report_saleorder_inherit" inherit_id="sale.report_saleorder_document">
+
+            <xpath expr="//table/thead/tr/th[4]" position="after">
+                <th name="th_second_discount" class="text-right">
+                    <span>2nd Disc.%</span>
+                </th>
+            </xpath>
+
+            <xpath expr="//td[@name='td_taxes']" position="before">
+                <td name="td_second_discount" class="text-right">
+                    <span t-field="line.second_discount" />
+                </td>
+            </xpath>
+
+        </template>
+    </data>
+    
+</odoo>
