@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Inherit Res Config Settings and Add New Field Sales Person and is Salesperson -->
+
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.sale</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="sale.res_config_settings_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//div[@data-key='sale_management']" position="inside">
+
+                <h2>Sales Test</h2>
+                
+                <div class="row o_settings_container">
+                    <div class="col-12 col-lg-6 o_setting_box" style="margin-top:20px;">
+                        <div class="o_setting_left_pane">
+                            <field name="is_salesperson" />
+                        </div>
+                        <div class="o_setting_right_pane">
+                            <label for="is_salesperson" />
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-6 o_setting_box" style="margin-top:20px;">
+                        <div class="o_setting_right_pane">
+                            <span class="o_form_label">Sales Person</span>
+                            <div class="text-muted">
+                                <field name="sales_person" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
