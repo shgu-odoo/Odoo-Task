@@ -14,8 +14,6 @@
                 <widget name="web_custom_widget_shgu" title="Cancel Order" bg_color="bg-danger" attrs="{'invisible': [('state', '!=', 'cancel')]}"/>
                 <widget name="web_custom_widget_shgu" title="Quotation Order" bg_color="bg-primary" attrs="{'invisible': [('state', '!=', 'draft')]}"/>
             </xpath>
-
-
             
         </field>
    </record>
